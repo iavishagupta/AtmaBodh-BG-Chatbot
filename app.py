@@ -18,11 +18,12 @@ def startup_event():
     This avoids long response time for the first user.
     """
     print("Prewarming RAG system...")
-    try:
-        answer_question("Hello!", session_id="warmup")
-        print("RAG system pre-warmed successfully!")
-    except Exception as e:
-        print(f"Error during pre-warm: {e}")
+    if os.getenv("PREWARM", "true").lower() == "true":
+        try:
+            answer_question("Hello!", session_id="warmup")
+            print("RAG system pre-warmed successfully!")
+        except Exception as e:
+            print(f"Error during pre-warm: {e}")
 
 # ---------- API Endpoints ----------
 @app.post("/ask")
