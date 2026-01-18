@@ -9,7 +9,7 @@ rag.py — RAG module for AtmaBodh
 """
 
 print("Initializing AtmaBodh...")
-
+import os
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_community.vectorstores import FAISS
 from langchain_core.prompts import ChatPromptTemplate
