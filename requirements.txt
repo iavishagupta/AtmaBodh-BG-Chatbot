@@ -1,16 +1,9 @@
 fastapi
 uvicorn
 
-langchain
 langchain-core
 langchain-community
 langchain-openai
 langchain-classic
 
-openai
-
 faiss-cpu
-sentence-transformers
-
-pandas
-kagglehub
