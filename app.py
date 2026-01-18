@@ -17,8 +17,8 @@ def startup_event():
     Pre-warm FAISS and LLM into memory on server start.
     This avoids long response time for the first user.
     """
-    print("Prewarming RAG system...")
     if os.getenv("PREWARM", "true").lower() == "true":
+        print("Prewarming RAG system...")
         try:
             answer_question("Hello!", session_id="warmup")
             print("RAG system pre-warmed successfully!")
